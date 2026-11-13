@@ -1,20 +1,141 @@
-// Atelier — Week Project Settimana VI
-// Definisci qui le tue variabili, mixin, override Bootstrap.
+$brand-primary: hsl(20, 30%, 35%);
+$brand-primary-hover: hsl(20, 30%, 27%);
+$brand-secondary: hsl(20, 20%, 15%);
+$brand-light: hsl(40, 30%, 90%);
+$bg-form: #f8f9fa;
+$radius-base: 0.5rem;
+$font-main: "Roboto", sans-serif;
 
+@mixin card-elevata {
+  border: none;
+  border-radius: $radius-base;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+  &:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.12);
+  }
+}
 
-// === Variabili (definisci $brand-primary, $brand-secondary, $radius-base, ecc.) ===
+body {
+  font-family: $font-main;
+  --bs-body-font-family: #{$font-main};
+}
 
+.bg-primary {
+  background-color: $brand-primary !important;
+}
 
+.text-primary {
+  color: $brand-primary !important;
+}
 
-// === Mixin (definisci almeno @mixin card-elevata o equivalente) ===
+.btn-primary {
+  background-color: $brand-primary;
+  border-color: $brand-primary;
+  border-radius: $radius-base;
+  &:hover,
+  &:focus,
+  &:active {
+    background-color: $brand-primary-hover !important;
+    border-color: $brand-primary-hover !important;
+  }
+}
 
+header {
+  position: sticky;
+  top: 0;
+  z-index: 1020;
+  .navbar {
+    background-color: $brand-secondary !important;
+    ul {
+      gap: 8px;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      li {
+        a {
+          font-size: 0.95rem;
+          font-weight: 600;
+          padding: 10px 18px !important;
+          border-radius: 6px;
+          color: rgba(255, 255, 255, 0.85);
+          transition:
+            background-color 0.2s ease,
+            color 0.2s ease,
+            transform 0.2s ease;
+          &:hover,
+          &.active {
+            color: $brand-light;
+            background-color: $brand-primary;
+            transform: translateY(-2px);
+          }
+        }
+      }
+    }
+  }
+}
 
+#studio {
+  min-height: 80vh;
+  background-color: $brand-primary;
+  h1 {
+    letter-spacing: -0.5px;
+  }
+  a {
+    display: inline-block;
+    font-size: 0.95rem;
+    font-weight: 600;
+    padding: 10px 18px;
+    border-radius: 6px;
+    color: rgba(255, 255, 255, 0.9);
+    transition:
+      background-color 0.2s ease,
+      color 0.2s ease,
+      transform 0.2s ease;
 
-// === Override Bootstrap (sovrascrivi .btn-primary, .bg-primary, .text-primary col tuo colore brand) ===
+    &:hover {
+      color: $brand-light;
+      background-color: $brand-primary-hover; // hsl(20, 30%, 27%)
+      transform: translateY(-2px);
+    }
+  }
+}
 
+#servizi {
+  .card-elevata {
+    @include card-elevata;
+    .card-icon {
+      line-height: 1;
+    }
+    .card-title {
+      color: $brand-primary;
+      font-weight: 700;
+    }
+  }
+}
 
+#contatti {
+  background-color: $bg-form;
+  .form-control,
+  .form-select {
+    border-radius: $radius-base;
+    &:focus {
+      border-color: $brand-primary;
+      box-shadow: 0 0 0 0.25rem rgba($brand-primary, 0.25);
+    }
+  }
+}
 
-// === Stili custom delle sezioni (header sticky, hero, servizi, contatti, footer) ===
-body{
-    background-color: hsl(20, 30%, 35%);
+footer {
+  background-color: $brand-secondary !important;
+  a {
+    color: rgba(255, 255, 255, 0.75);
+    transition: color 0.2s ease;
+    &:hover {
+      color: $brand-light !important;
+    }
+  }
 }
