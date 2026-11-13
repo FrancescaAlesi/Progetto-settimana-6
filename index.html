@@ -28,6 +28,12 @@
                                 <a class="nav-link" href="#servizi">Servizi</a>
                             </li>
                             <li class="nav-item">
+                                <a class="nav-link" href="#lavori">Lavori</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#faq">FAQ</a>
+                            </li>
+                            <li class="nav-item">
                                 <a class="nav-link" href="#contatti">Contatti</a>
                             </li>
                             <li class="nav-item">
@@ -115,50 +121,52 @@
                     <p>Compila il form, ti rispondiamo entro 48 ore.</p>
                 </div>
 
-                <div class="col-12 col-md-8 col-lg-6 mx-auto">
-                    <form>
-                        <button type="button" class="btn btn-primary w-100" data-bs-toggle="modal" data-bs-target="#exampleModal">Scrivici</button>
-                        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                            <div class="modal-dialog">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <h1 class="modal-title fs-5" id="exampleModalLabel">Contattaci</h1>
-                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                <div class="col-12 col-md-8 col-lg-6 mx-auto text-center">
+                    <button type="button" class="btn btn-primary btn-scrivici px-4 py-2" data-bs-toggle="modal" data-bs-target="#exampleModal">Scrivici</button>
+                    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <form id="contact-form" class="modal-content">
+                                <div class="modal-header">
+                                    <h1 class="modal-title fs-5" id="exampleModalLabel">Contattaci</h1>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body text-start">
+                                    <div class="mb-3">
+                                        <label for="nameInput" class="form-label">Nome</label>
+                                        <input class="form-control" id="nameInput" type="text" placeholder="Nome completo" required>
                                     </div>
-                                    <div class="modal-body">
-                                        <div class="mb-3">
-                                            <label for="nameInput" class="form-label">Nome</label>
-                                            <input class="form-control" id="nameInput" type="text" placeholder="Nome completo">
-                                        </div>
 
-                                        <div class="mb-3">
-                                            <label for="emailInput" class="form-label">Email address</label>
-                                            <input type="email" class="form-control" id="emailInput" placeholder="name@example.com">
-                                        </div>
-
-                                        <div class="mb-3">
-                                            <label for="projectSelect" class="form-label">Tipo di progetto</label>
-                                            <select class="form-select" id="projectSelect" aria-label="Tipo di progetto">
-                                                <option selected disabled>Scegli il tipo di progetto..</option>
-                                                <option value="PR">Progettazione residenziale</option>
-                                                <option value="ID">Interior design</option>
-                                                <option value="R">Ristrutturazioni</option>
-                                            </select>
-                                        </div>
-
-                                        <div class="mb-3">
-                                            <label for="textareaInput" class="form-label">Messaggio</label>
-                                            <textarea class="form-control" id="textareaInput" rows="3"></textarea>
-                                        </div>
+                                    <div class="mb-3">
+                                        <label for="emailInput" class="form-label">Email address</label>
+                                        <input type="email" class="form-control" id="emailInput" placeholder="name@example.com" required>
                                     </div>
-                                    <div class="modal-footer">
-                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Chiudi</button>
-                                        <button type="button" class="btn btn-primary">Invia</button>
+
+                                    <div class="mb-3">
+                                        <label for="projectSelect" class="form-label">Tipo di progetto</label>
+                                        <select class="form-select" id="projectSelect" aria-label="Tipo di progetto" required>
+                                            <option value="" selected disabled>Scegli il tipo di progetto..</option>
+                                            <option value="PR">Progettazione residenziale</option>
+                                            <option value="ID">Interior design</option>
+                                            <option value="R">Ristrutturazioni</option>
+                                        </select>
+                                    </div>
+
+                                    <div class="mb-3">
+                                        <label for="textareaInput" class="form-label">Messaggio</label>
+                                        <textarea class="form-control" id="textareaInput" rows="3" required></textarea>
+                                    </div>
+
+                                    <div id="form-feedback" class="alert alert-success d-none mb-0" role="alert">
+                                        Grazie per averci contattato! Ti risponderemo entro 48 ore.
                                     </div>
                                 </div>
-                            </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Chiudi</button>
+                                    <button type="submit" class="btn btn-primary">Invia</button>
+                                </div>
+                            </form>
                         </div>
-                    </form>
+                    </div>
                 </div>
             </div>
         </section>
@@ -182,6 +190,98 @@
             </div>
         </div>
 
+        <section id="faq" class="py-5">
+            <div class="container">
+                <div class="text-center mb-5">
+                    <h2 class="fw-bold">Domande frequenti</h2>
+                    <p>Tutto quello che c'è da sapere sul nostro metodo di lavoro e sulla gestione dei progetti.</p>
+                </div>
+                <div class="row justify-content-center">
+                    <div class="col-12 col-lg-9">
+                        <div class="accordion accordion-flush border rounded-3 overflow-hidden shadow-sm" id="accordionAtelier">
+                            <div class="accordion-item">
+                                <h3 class="accordion-header" id="headingOne">
+                                    <button class="accordion-button collapsed fw-semibold py-3" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                                        Di quali tipologie di progetti si occupa lo studio Atelier?
+                                    </button>
+                                </h3>
+                                <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionAtelier">
+                                    <div class="accordion-body">
+                                        Lo studio realizza progetti di <strong>architettura residenziale</strong>, <strong>interior design</strong>, ristrutturazioni conservative di edifici storici e spazi commerciali o direzionali, seguendo l'intero iter dalla progettazione preliminare alla direzione lavori.
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="accordion-item">
+                                <h3 class="accordion-header" id="headingTwo">
+                                    <button class="accordion-button collapsed fw-semibold py-3" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                        Come funziona la prima consulenza e come posso richiedere un preventivo?
+                                    </button>
+                                </h3>
+                                <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionAtelier">
+                                    <div class="accordion-body">
+                                        È possibile prenotare un primo incontro conoscitivo (in studio a Milano o in videocall) compilando il modulo nella sezione <a href="#contatti" class="text-primary text-decoration-none fw-medium">Contatti</a>. Dopo un'analisi preliminare delle esigenze e un eventuale sopralluogo, elaboriamo una proposta progettuale con un preventivo dettagliato e trasparente.
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="accordion-item">
+                                <h3 class="accordion-header" id="headingThree">
+                                    <button class="accordion-button collapsed fw-semibold py-3" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                        Seguite anche le pratiche burocratiche e i permessi edilizi?
+                                    </button>
+                                </h3>
+                                <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionAtelier">
+                                    <div class="accordion-body">
+                                        Sì, ci occupiamo della gestione completa dell'iter autorizzativo, inclusa la presentazione di <strong>CILA, SCIA, Permessi di Costruire</strong>, pratiche catastali e nulla osta paesaggistici o della Soprintendenza, sollevando il cliente da ogni incombenza tecnica.
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="accordion-item">
+                                <h3 class="accordion-header" id="headingFour">
+                                    <button class="accordion-button collapsed fw-semibold py-3" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                                        Collaborate con imprese edili e artigiani di fiducia?
+                                    </button>
+                                </h3>
+                                <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#accordionAtelier">
+                                    <div class="accordion-body">
+                                        Assolutamente sì. Nel corso degli anni abbiamo consolidato una rete di imprese edili, falegnami e fornitori selezionati a Milano e in Lombardia, garantendo elevati standard qualitativi e il pieno rispetto delle tempistiche concordate.
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="accordion-item">
+                                <h3 class="accordion-header" id="headingFive">
+                                    <button class="accordion-button collapsed fw-semibold py-3" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                                        Realizzate progetti anche al di fuori di Milano?
+                                    </button>
+                                </h3>
+                                <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive" data-bs-parent="#accordionAtelier">
+                                    <div class="accordion-body">
+                                        Pur avendo sede a Milano, operiamo su tutto il territorio nazionale e seguiamo selezionati progetti internazionali, coordinando i lavori sia in presenza sia tramite strumenti digitali di monitoraggio del cantiere.
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="accordion-item">
+                                <h3 class="accordion-header" id="headingSix">
+                                    <button class="accordion-button collapsed fw-semibold py-3" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+                                        Offrite un servizio "chiavi in mano"?
+                                    </button>
+                                </h3>
+                                <div id="collapseSix" class="accordion-collapse collapse" aria-labelledby="headingSix" data-bs-parent="#accordionAtelier">
+                                    <div class="accordion-body">
+                                        Sì, il servizio <em>chiavi in mano</em> comprende il concept architettonico, la progettazione esecutiva, la direzione artistica e dei lavori, fino alla scelta e fornitura di arredi su misura, illuminazione e finiture.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <footer class="py-5 text-light">
             <div class="container">
                 <div class="row gy-4">
@@ -198,7 +298,9 @@
                         <ul class="nav flex-column">
                             <li class="nav-item mb-2"><a href="#studio" class="text-decoration-none">Studio</a></li>
                             <li class="nav-item mb-2"><a href="#servizi" class="text-decoration-none">Servizi</a></li>
+                            <li class="nav-item mb-2"><a href="#lavori" class="text-decoration-none">Lavori</a></li>
                             <li class="nav-item mb-2"><a href="#contatti" class="text-decoration-none">Contatti</a></li>
+                            <li class="nav-item mb-2"><a href="#faq" class="text-decoration-none">FAQ</a></li>
                         </ul>
                     </div>
 

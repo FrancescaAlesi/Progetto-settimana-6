@@ -4,7 +4,7 @@ const lavori = [
     titolo: "Residenza Monolite",
     anno: 2026,
     categoria: "Progettazione residenziale",
-    img: "https://placehold.co/300x180",
+    img: "https://images.pexels.com/photos/14574897/pexels-photo-14574897.jpeg",
     descrizione:
       "Nuova costruzione in cemento architettonico pigmentato e legno di larice sulle colline torinesi, progettata per massimizzare l'apporto solare passivo.",
   },
@@ -14,7 +14,7 @@ const lavori = [
     titolo: "Bistrot Botanico",
     anno: 2026,
     categoria: "Interior design",
-    img: "https://placehold.co/300x180",
+    img: "https://images.pexels.com/photos/18675116/pexels-photo-18675116.jpeg",
     descrizione:
       "Progetto d'interni per un locale contemporaneo nel centro di Bologna, con bancone in ottone brunito, intonaci in calce naturale e verde pensile.",
   },
@@ -24,7 +24,7 @@ const lavori = [
     titolo: "Ex Filanda",
     anno: 2025,
     categoria: "Ristrutturazioni",
-    img: "https://placehold.co/300x180",
+    img: "https://images.pexels.com/photos/20699102/pexels-photo-20699102.jpeg",
     descrizione:
       "Recupero conservativo e cambio di destinazione d'uso di un edificio industriale ottocentesco trasformato in studio creativo e spazi di co-working.",
   },
@@ -34,7 +34,7 @@ const lavori = [
     titolo: "Padiglione sul Mare",
     anno: 2025,
     categoria: "Progettazione residenziale",
-    img: "https://placehold.co/300x180",
+    img: "https://images.pexels.com/photos/14560687/pexels-photo-14560687.jpeg",
     descrizione:
       "Villa estiva a un solo piano sulla costa siciliana, realizzata in pietra arenaria locale con patio interno ombreggiato e vista aperta sull'orizzonte.",
   },
@@ -44,7 +44,7 @@ const lavori = [
     titolo: "Sede Studio Legale",
     anno: 2024,
     categoria: "Interior design",
-    img: "https://placehold.co/300x180",
+    img: "https://images.pexels.com/photos/36476573/pexels-photo-36476573.jpeg",
     descrizione:
       "Ridisegno completo di uffici direzionali di 420 mq con pareti divisorie fonoassorbenti in vetro fumé, boiserie in noce canaletto e illuminazione su misura.",
   },
@@ -54,7 +54,7 @@ const lavori = [
     titolo: "Palazzina Liberty",
     anno: 2024,
     categoria: "Ristrutturazioni",
-    img: "https://placehold.co/300x180",
+    img: "https://images.pexels.com/photos/17175560/pexels-photo-17175560.jpeg",
     descrizione:
       "Restauro delle facciate storiche e frazionamento interno di un immobile dei primi del Novecento, con adeguamento sismico e impianti geotermici.",
   },
@@ -67,6 +67,9 @@ const contactForm = document.getElementById("contact-form");
 const formFeedback = document.getElementById("form-feedback");
 const modalElement = document.getElementById("lavoroModal");
 const lavoroModal = new bootstrap.Modal(modalElement);
+const contactModalEl = document.getElementById("exampleModal");
+const contactModal = new bootstrap.Modal(contactModalEl);
+
 
 function renderLavori(lista) {
   contenitoreLavori.innerHTML = lista
@@ -128,4 +131,16 @@ contenitoreLavori.addEventListener("click", (e) => {
   document.getElementById("modal-descrizione").textContent = lavoro.descrizione;
 
   lavoroModal.show();
+});
+
+contactForm.addEventListener("submit", (e) => {
+  e.preventDefault();
+
+  formFeedback.classList.remove("d-none");
+
+  setTimeout(() => {
+    formFeedback.classList.add("d-none");
+    contactForm.reset();
+    contactModal.hide();
+  }, 2000);
 });

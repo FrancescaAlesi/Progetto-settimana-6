@@ -2,16 +2,19 @@
 @use "variables" as *;
 
 @mixin card-elevata {
-  border: none;
+  border: 1px solid transparent;
   border-radius: $radius-base;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
   transition:
     transform 0.3s ease,
     box-shadow 0.3s ease,
+    border-color 0.25s ease,
     background-color 0.25s ease;
+
   &:hover {
     transform: translateY(-6px);
-    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.14);
+    border-color: rgba($brand-primary, 0.45);
+    box-shadow: 0 10px 24px rgba($brand-primary, 0.22);
   }
 }
 
