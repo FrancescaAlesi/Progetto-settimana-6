@@ -1,0 +1,94 @@
+@use "variables" as *;
+@use "mixins" as *;
+
+.bg-primary {
+  background-color: $brand-primary !important;
+}
+
+.text-primary {
+  color: $brand-primary !important;
+}
+
+.btn-primary {
+  background-color: $brand-primary;
+  border-color: $brand-primary;
+  border-radius: $radius-base;
+  transition: background-color 0.25s ease, border-color 0.25s ease;
+
+  &:hover,
+  &:focus,
+  &:active {
+    background-color: $brand-primary-hover !important;
+    border-color: $brand-primary-hover !important;
+  }
+}
+
+.btn-filtro {
+  color: $brand-primary;
+  border: 1px solid $brand-primary;
+  border-radius: $radius-base;
+  background-color: transparent;
+  transition: all 0.25s ease;
+
+  &:hover,
+  &.active {
+    background-color: $brand-primary;
+    color: #ffffff;
+  }
+}
+
+.card-elevata {
+  @include card-elevata;
+}
+
+.lavoro-card {
+  cursor: pointer;
+
+  // Primo utilizzo del mixin solo-su($bp)
+  @include solo-su(lg) {
+    padding: 1.25rem !important;
+  }
+}
+
+body.dark {
+  background-color: $dark-bg;
+  color: $dark-text;
+  .card-elevata {
+    background-color: $dark-surface;
+    color: $dark-text;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.4);
+  }
+  .card-title {
+    color: hsl(25, 45%, 65%) !important;
+  }
+  .btn-filtro {
+    color: $brand-light;
+    border-color: $brand-light;
+    &:hover,
+    &.active {
+      background-color: $brand-primary;
+      border-color: $brand-primary;
+      color: #ffffff;
+    }
+  }
+  #contatti {
+    background-color: $dark-surface;
+  }
+  .form-control,
+  .form-select {
+    background-color: $dark-bg;
+    border-color: $dark-border;
+    color: $dark-text;
+    &::placeholder {
+      color: rgba(242, 237, 233, 0.5);
+    }
+  }
+  .modal-content {
+    background-color: $dark-surface;
+    color: $dark-text;
+    border: 1px solid $dark-border;
+  }
+  .btn-close {
+    filter: invert(1) grayscale(100%) brightness(200%);
+  }
+}

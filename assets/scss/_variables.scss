@@ -1,0 +1,20 @@
+$brand-primary: hsl(20, 30%, 35%);
+$brand-primary-hover: hsl(20, 30%, 27%);
+$brand-secondary: hsl(20, 20%, 15%);
+$brand-light: hsl(40, 30%, 90%);
+$bg-form: #f8f9fa;
+
+$dark-bg: #141211;
+$dark-surface: #1f1c1a;
+$dark-border: #332e2b;
+$dark-text: #f2ede9;
+
+$radius-base: 0.5rem;
+$font-main: "Roboto", sans-serif;
+
+$breakpoints: (
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px
+);
